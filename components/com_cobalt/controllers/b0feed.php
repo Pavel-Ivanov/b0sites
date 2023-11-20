@@ -31,14 +31,11 @@ class CobaltControllerB0Feed extends JControllerAdmin
 			}
 			else {
 				$message = '200: Файл '. $config['name'] .' не сформирован';
-			}
-			$this->sendMail($message);
-			
-//			$message = '200: Файл '. $config['name'] .' сформирован';
-//			$this->sendMail($message);
+                $this->sendMail($message);
+            }
 		}
-		$message = '200: Файлы сформированы';
-		JExit($message);
+        $this->sendMail('200: Файлы сформированы');
+		JExit('200: Файлы сформированы');
 	}
 	
 	private function sendMail($messageBody): bool
